@@ -1,0 +1,24 @@
+pipelines:
+  test-pipeline: # name of pipeline
+    group: Microservices
+    materials:
+      servicegit: # name of material
+        git: https://github.com/SamiMe/TestMaterial.git
+        branch: master
+#        username: testbot
+#        encrypted_password: AES:RrM1duo35435435435435gAg==:79UGH656565767myIcxQ==
+        destination: gitmaterialdir
+#        auto_update: true
+    stages:
+      - print_pwd: # name of stage
+          clean_workspace: true
+          #approval: manual
+          jobs: # jobs are ran in parallel
+            pwd: # name of job
+              elastic_profile_id: alpine-agent
+              tasks:
+               - exec:
+                   command: bash
+                   arguments:
+                    - "-c"
+                    - "ls && pwd"
