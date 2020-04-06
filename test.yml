@@ -15,10 +15,10 @@ pipelines:
           #approval: manual
           jobs: # jobs are ran in parallel
             pwd: # name of job
-              elastic_profile_id: Ubuntu
+              elastic_profile_id: alpine
               tasks:
                - exec:
                    command: bash
                    arguments:
                     - "-c"
-                    - "pwd && ls && docker images"
+                    - "pwd && ls"
