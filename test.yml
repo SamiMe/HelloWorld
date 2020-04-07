@@ -1,11 +1,13 @@
 pipelines:
   test-pipeline: # name of pipeline
+  environment_variables:
+    DOCKERHUBPASS: AES:7GGJ62qOjkgPLaVCSwdG9A==:HLVOsAgXiQvM7oa0FJjnh45MHCbauBU5WPSnYFbKrfjyuonSbixlzifcU4ZOrbhi 
     group: Microservices
     materials:
       servicegit: # name of material
-        git: https://github.com/SamiMe/bug.git
-        username: SamiMe
-        encrypted_password: AES:sGZ8kSqFR/6mAI29W1Pj3g==:cwjyjlpEwXe8Jto8iHjThA==
+        git: https://github.com/SamiMe/TestMaterial.git
+        #username: SamiMe
+        #encrypted_password: AES:sGZ8kSqFR/6mAI29W1Pj3g==:cwjyjlpEwXe8Jto8iHjThA==
         branch: master
         destination: gitmaterialdir
 #        auto_update: true
@@ -23,3 +25,28 @@ pipelines:
                    arguments:
                     - "-c"
                     - "pwd && ls"
+      - build_docker: # name of stage
+         clean_workspace: true
+         #approval: manual
+         jobs: # jobs are ran in parallel
+           build: # name of job
+             elastic_profile_id: alpine
+             tasks:
+              - exec:
+                  command: bash
+                  working_directory: gitmaterialdir
+                  arguments:
+                   - "-c"
+                   - "- print_pwd1: # name of stage
+          clean_workspace: true
+          #approval: manual
+          jobs: # jobs are ran in parallel
+            pwd: # name of job
+              elastic_profile_id: alpine
+              tasks:
+               - exec:
+                   command: bash
+                   working_directory: gitmaterialdir
+                   arguments:
+                    - "-c"
+                    - " $DOCKERHUBPASS | docker login docker.pkg.github.com -u SamiMe --password-stdin"
