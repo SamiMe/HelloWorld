@@ -24,7 +24,7 @@ pipelines:
                    working_directory: gitmaterialdir
                    arguments:
                     - "-c"
-                    - "pwd && ls"
+                    - "pwd && ls && docker images"
       - build_docker: # name of stage
          clean_workspace: true
          #approval: manual
