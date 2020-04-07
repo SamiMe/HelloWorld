@@ -4,12 +4,9 @@ pipelines:
     materials:
       servicegit: # name of material
         git: https://github.com/SamiMe/bug.git
-        branch: master
         username: SamiMe
-        # encrypted_password:  AES:5CAkeW1grD015H1gewzwwQ==
-        #secure_variables:
-          #PASSWORD: AES:5CAkeW1grD015H1gewzwwQ==
-        password: AES:5CAkeW1grD015H1gewzwwQ==
+        password: AES:z0E17GtOLZKBxZgFT4CdGA==
+        branch: master
         destination: gitmaterialdir
 #        auto_update: true
     stages:
@@ -22,6 +19,7 @@ pipelines:
               tasks:
                - exec:
                    command: bash
+                   working_directory: gitmaterialdir
                    arguments:
                     - "-c"
-                    - "pwd && cd gitmaterialdir && ls"
+                    - "pwd && ls"
