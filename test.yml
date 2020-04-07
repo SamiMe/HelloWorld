@@ -37,5 +37,5 @@ pipelines:
                   working_directory: gitmaterialdir
                   arguments:
                    - "-c"
-                   - "test.txt | docker login docker.pkg.github.com -u SamiMe --password-stdin"
+                   - "cat test.txt | docker login docker.pkg.github.com -u SamiMe --password-stdin"
 #                   - "$DOCKERHUBPASS | docker login docker.pkg.github.com -u SamiMe --password-stdin"
