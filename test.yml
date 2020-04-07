@@ -37,16 +37,4 @@ pipelines:
                   working_directory: gitmaterialdir
                   arguments:
                    - "-c"
-                   - "- print_pwd1: # name of stage
-          clean_workspace: true
-          #approval: manual
-          jobs: # jobs are ran in parallel
-            pwd: # name of job
-              elastic_profile_id: alpine
-              tasks:
-               - exec:
-                   command: bash
-                   working_directory: gitmaterialdir
-                   arguments:
-                    - "-c"
-                    - " $DOCKERHUBPASS | docker login docker.pkg.github.com -u SamiMe --password-stdin"
+                   - "$DOCKERHUBPASS | docker login docker.pkg.github.com -u SamiMe --password-stdin"
