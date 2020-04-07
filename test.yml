@@ -10,7 +10,7 @@ pipelines:
         destination: gitmaterialdir
 #        auto_update: true
     stages:
-      - print_pwd: # name of stage
+      - print_pwd1: # name of stage
           clean_workspace: true
           #approval: manual
           jobs: # jobs are ran in parallel
