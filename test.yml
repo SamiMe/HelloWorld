@@ -25,16 +25,17 @@ pipelines:
                    arguments:
                     - "-c"
                     - "pwd && ls && docker images"
-#      - build_docker: # name of stage
-#         clean_workspace: true
-#         #approval: manual
-#         jobs: # jobs are ran in parallel
-#           build: # name of job
-#             elastic_profile_id: alpine
-#             tasks:
-#              - exec:
-#                  command: bash
-#                  working_directory: gitmaterialdir
-#                  arguments:
-#                   - "-c"
+      - build_docker: # name of stage
+         clean_workspace: true
+         #approval: manual
+         jobs: # jobs are ran in parallel
+           build: # name of job
+             elastic_profile_id: alpine
+             tasks:
+              - exec:
+                  command: bash
+                  working_directory: gitmaterialdir
+                  arguments:
+                   - "-c"
+                   - "ls"
 #                   - "$DOCKERHUBPASS | docker login docker.pkg.github.com -u SamiMe --password-stdin"
