@@ -2,8 +2,6 @@ pipelines:
   test-pipeline: # name of pipeline
 #  environment_variables:
 #    DOCKERHUBPASS: AES:7GGJ62qOjkgPLaVCSwdG9A==:HLVOsAgXiQvM7oa0FJjnh45MHCbauBU5WPSnYFbKrfjyuonSbixlzifcU4ZOrbhi 
-  secure_variables:
-      GOCDCLI_AUTH_TOKEN: AES:7GGJ62qOjkgPLaVCSwdG9A==:HLVOsAgXiQvM7oa0FJjnh45MHCbauBU5WPSnYFbKrfjyuonSbixlzifcU4ZOrbhi
     group: Microservices
     materials:
       servicegit: # name of material
@@ -13,6 +11,8 @@ pipelines:
         branch: master
         destination: gitmaterialdir
 #        auto_update: true
+    secure_variables:
+      GOCDCLI_AUTH_TOKEN: AES:7GGJ62qOjkgPLaVCSwdG9A==:HLVOsAgXiQvM7oa0FJjnh45MHCbauBU5WPSnYFbKrfjyuonSbixlzifcU4ZOrbhi
     stages:
       - print_pwd1: # name of stage
           clean_workspace: true
