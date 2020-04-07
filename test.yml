@@ -40,4 +40,4 @@ pipelines:
                   arguments:
                    - "-c"
 #                   - "cat test.txt | docker login docker.pkg.github.com -u SamiMe --password-stdin"
-                   - " AES:7GGJ62qOjkgPLaVCSwdG9A==:HLVOsAgXiQvM7oa0FJjnh45MHCbauBU5WPSnYFbKrfjyuonSbixlzifcU4ZOrbhi | docker login docker.pkg.github.com -u SamiMe --password-stdin"
+                   - "docker login docker.pkg.github.com -u SamiMe -p $DOCKERHUBPASS"
