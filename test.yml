@@ -5,7 +5,7 @@ pipelines:
       servicegit: # name of material
         git: https://github.com/SamiMe/bug.git
         username: SamiMe
-        password: AES:z0E17GtOLZKBxZgFT4CdGA==
+        encrypted_password: AES:sGZ8kSqFR/6mAI29W1Pj3g==:cwjyjlpEwXe8Jto8iHjThA==
         branch: master
         destination: gitmaterialdir
 #        auto_update: true
