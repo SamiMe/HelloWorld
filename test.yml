@@ -21,4 +21,4 @@ pipelines:
                    command: bash
                    arguments:
                     - "-c"
-                    - "pwd && ls"
+                    - "pwd && cd gitmaterialdir && ls"
