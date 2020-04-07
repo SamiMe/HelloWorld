@@ -6,7 +6,9 @@ pipelines:
         git: https://github.com/SamiMe/bug.git
         branch: master
         username: SamiMe
-        encrypted_password: AES:5CAkeW1grD015H1gewzwwQ==
+        # encrypted_password:  AES:5CAkeW1grD015H1gewzwwQ==
+        secure_variables:
+          PASSWORD: AES:5CAkeW1grD015H1gewzwwQ==
         destination: gitmaterialdir
 #        auto_update: true
     stages:
