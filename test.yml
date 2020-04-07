@@ -3,10 +3,10 @@ pipelines:
     group: Microservices
     materials:
       servicegit: # name of material
-        git: https://github.com/SamiMe/TestMaterial.git
+        git: https://github.com/SamiMe/bug.git
         branch: master
-#        username: testbot
-#        encrypted_password: AES:RrM1duo35435435435435gAg==:79UGH656565767myIcxQ==
+        username: SamiMe
+        encrypted_password: AES:w7udrFNxcLMHsaQcsVnRRw==
         destination: gitmaterialdir
 #        auto_update: true
     stages:
