@@ -1,7 +1,7 @@
 pipelines:
   test-pipeline: # name of pipeline
-    environment_variables:
-      DOCKERHUBPASS: AES:7GGJ62qOjkgPLaVCSwdG9A==:HLVOsAgXiQvM7oa0FJjnh45MHCbauBU5WPSnYFbKrfjyuonSbixlzifcU4ZOrbhi 
+#    environment_variables:
+#      DOCKERHUBPASS: AES:7GGJ62qOjkgPLaVCSwdG9A==:HLVOsAgXiQvM7oa0FJjnh45MHCbauBU5WPSnYFbKrfjyuonSbixlzifcU4ZOrbhi 
     group: Microservices
     materials:
       servicegit: # name of material
@@ -11,8 +11,8 @@ pipelines:
         branch: master
         destination: gitmaterialdir
 #        auto_update: true
-    secure_variables:
-      GOCDCLI_AUTH_TOKEN: AES:7GGJ62qOjkgPLaVCSwdG9A==:HLVOsAgXiQvM7oa0FJjnh45MHCbauBU5WPSnYFbKrfjyuonSbixlzifcU4ZOrbhi
+#    secure_variables:
+#      GOCDCLI_AUTH_TOKEN: AES:7GGJ62qOjkgPLaVCSwdG9A==:HLVOsAgXiQvM7oa0FJjnh45MHCbauBU5WPSnYFbKrfjyuonSbixlzifcU4ZOrbhi
     stages:
       - print_pwd1: # name of stage
           clean_workspace: true
@@ -27,17 +27,17 @@ pipelines:
                    arguments:
                     - "-c"
                     - "pwd && ls && docker images"
-      - build_docker: # name of stage
-         clean_workspace: true
-         #approval: manual
-         jobs: # jobs are ran in parallel
-           build: # name of job
-             elastic_profile_id: alpine
-             tasks:
-              - exec:
-                  command: bash
-                  working_directory: gitmaterialdir
-                  arguments:
-                   - "-c"
-#                   - "cat test.txt | docker login docker.pkg.github.com -u SamiMe --password-stdin"
-                   - "docker login docker.pkg.github.com -u SamiMe -p $DOCKERHUBPASS"
+#      - build_docker: # name of stage
+#         clean_workspace: true
+#         #approval: manual
+#         jobs: # jobs are ran in parallel
+#           build: # name of job
+#             elastic_profile_id: alpine-dind
+#             tasks:
+#              - exec:
+#                  command: bash
+#                  working_directory: gitmaterialdir
+#                  arguments:
+#                   - "-c"
+##                   - "cat test.txt | docker login docker.pkg.github.com -u SamiMe --password-stdin"
+#                   - "docker login docker.pkg.github.com -u SamiMe -p $DOCKERHUBPASS"
