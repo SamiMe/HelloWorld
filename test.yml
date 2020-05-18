@@ -19,7 +19,7 @@ pipelines:
           #approval: manual
           jobs: # jobs are ran in parallel
             pwd: # name of job
-              elastic_profile_id: alpine-agent
+              elastic_profile_id: dind-agent
               tasks:
                - exec:
                    command: bash
