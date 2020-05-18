@@ -6,9 +6,9 @@ pipelines:
     materials:
       servicegit: # name of material
         git: https://github.com/SamiMe/private_repo.git
+        branch: master
         username: SamiMe
         encrypted_password: AES:A4veIvcxs9qoT1e0dRtDbw==:yIvj5YKzNDCyU5PsjOKKKA==
-        branch: master
         destination: gitmaterialdir
         auto_update: true
 #    secure_variables:
@@ -26,7 +26,7 @@ pipelines:
                    working_directory: gitmaterialdir
                    arguments:
                     - "-c"
-                    - "ls"
+                    - "ls && pwd"
 #      - build_docker: # name of stage
 #         clean_workspace: true
 #         #approval: manual
