@@ -10,7 +10,7 @@ pipelines:
         encrypted_password: AES:A4veIvcxs9qoT1e0dRtDbw==:yIvj5YKzNDCyU5PsjOKKKA==
         branch: master
         destination: gitmaterialdir
-#        auto_update: true
+        auto_update: true
 #    secure_variables:
 #      GOCDCLI_AUTH_TOKEN: AES:7GGJ62qOjkgPLaVCSwdG9A==:HLVOsAgXiQvM7oa0FJjnh45MHCbauBU5WPSnYFbKrfjyuonSbixlzifcU4ZOrbhi
     stages:
