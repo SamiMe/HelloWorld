@@ -8,7 +8,7 @@ pipelines:
         git: https://github.com/SamiMe/private_repo.git
         branch: master
         username: SamiMe
-        encrypted_password: AES:A4veIvcxs9qoT1e0dRtDbw==:yIvj5YKzNDCyU5PsjOKKKA==
+        encrypted_password: AES:eSDBvsh0GnvExg1JzeQIcQ==:ZTlrNvR11d161qiwnn6JTQ==
         destination: gitmaterialdir
         auto_update: true
 #    secure_variables:
