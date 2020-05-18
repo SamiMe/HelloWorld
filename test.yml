@@ -7,7 +7,7 @@ pipelines:
       servicegit: # name of material
         git: https://github.com/SamiMe/private_repo.git
         username: SamiMe
-        encrypted_password: AES:f7NG0CHkFOxhjzMMQIEB8g==:EINPdnPbg8zw5P0Zp9pkdw== 
+        encrypted_password: AES:4717J95BMPSiPY3K28sO7w==:NelOExBs/xvFDrYCC3WELg== 
         branch: master
         destination: gitmaterialdir
 #        auto_update: true
